@@ -1,0 +1,11 @@
+{% extends "home.html" %}
+{% block content %}
+{% load crispy_forms_tags %}
+<h1 style="text-align:center;">Login page</h1>
+<form action="{% url "login" %}" method="POST" style="width: 500px; margin: auto;">
+    {% csrf_token %}
+{{login | crispy}}
+<button class='btn btn-primary' style="display:block; margin:20px auto;  color:white; padding:10px 20px; border:none; border-radius:5px; cursor:pointer;" type='Submit'>Submit</button>
+</form>
+
+{% endblock content %}
